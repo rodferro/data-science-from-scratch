@@ -36,10 +36,8 @@ def inverse_normal_cdf(p, mu=0, sigma=1, tolerance=0.00001):
         mid_z = (low_z + hi_z) / 2  # consider the midpoint
         mid_p = normal_cdf(mid_z)   # and the cdf's value there
         if mid_p < p:
-            # midpoint is still too low, search above it
             low_z, low_p = mid_z, mid_p
         elif mid_p > p:
-            # midpoint is still too high, search below it
             hi_z, hi_p = mid_z, mid_p
         else:
             break
